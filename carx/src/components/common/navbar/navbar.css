@@ -1,0 +1,72 @@
+.navbar {
+    background-color: #222;
+}
+
+.logo {
+    width: 100px;
+}
+.logo:hover {
+    cursor: pointer;
+}
+
+.link {
+    width: 60px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-bar {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    gap: 100px;
+}
+
+.searchbar {
+    background-color: #FFF;
+    align-items: center;
+    border-radius: 3px;
+}
+.searchbar-input {
+    width: 320px;
+    padding-left: 10px;
+}
+
+.searchbar-icon {
+    padding-right: 10px;
+    color: #000;
+
+}
+
+.searchbar-icon:hover {
+    cursor: pointer;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navigation .settings {
+    border: 1px solid#FFF;
+    padding: 5px 10px;
+    border-radius: 1;
+    color: #FFF;
+}
+
+.settings:hover{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+

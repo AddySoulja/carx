@@ -1,0 +1,124 @@
+.card {
+    display: flex;
+    height: 396px;
+width: 320px;
+padding: 0px 0px 30px 0px;
+flex-direction: column;
+align-items: center;
+gap: 16px;
+margin-bottom: 16px;
+margin-right: 16px;
+}
+
+.cardHeader {
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+.pop {
+    /* height: 15px;
+    width: 15px; */
+    /* transform: rotate(-18deg); */
+    position: relative;
+    top: -10px;
+    left: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 0 100px 0;
+background: #222;
+padding: 0 20px;
+
+color: #FFF;
+text-align: center;
+font-size: 11px;
+font-family: Poppins;
+font-weight: 600;
+line-height: 130%;
+}
+
+.optionBtn {
+    margin-left: auto;
+}
+
+.picture-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.picture-holder:hover {
+    cursor: pointer;
+}
+
+
+.spec1{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.spec-price{
+    color: #000;
+font-size: 18px;
+font-family: Poppins;
+font-weight: 600;
+line-height: 150%;
+padding-left: 16px;
+}
+
+.car-color-wrapper {
+    display: inline-flex;
+justify-content: flex-end;
+align-items: flex-start;
+gap: 8px;
+padding-right: 16px;
+}
+
+.car-color-label {
+    color: #000;
+font-size: 12px;
+font-family: Poppins;
+font-weight: 500;
+line-height: 185%;
+}
+
+.car-color {
+    width: 41px;
+height: 22px;
+}
+
+.spec2 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding-left: 32px;
+}
+
+.car-make {
+    display: flex;
+flex-direction: column;
+justify-content: center;
+
+color: #1B1B1B;
+font-size: 18px;
+font-family: Poppins;
+font-weight: 600;
+line-height: 150%;
+}
+
+.car-seller {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #7E7E7E;
+    font-size: 13px;
+    font-family: Poppins;
+    font-weight: 500;
+    line-height: 185%;
+    width: 90%;
+}

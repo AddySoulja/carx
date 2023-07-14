@@ -1,0 +1,14 @@
+
+.header {
+    display: flex;
+    align-items: center;
+    width: 90vw;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+#chevron {
+    border-radius: 30px;
+    background-color: #222;
+    color: #FFF;
+}

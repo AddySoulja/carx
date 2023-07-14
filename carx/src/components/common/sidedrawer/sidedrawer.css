@@ -1,0 +1,167 @@
+.side-drawer {
+	/* overflow-x: hidden;
+	-ms-overflow-style: none;
+	scrollbar-width: none; */
+	display: flex;
+	background-color: #FFF;
+	flex-direction: column;
+
+	/* justify-content: flex-end; */
+	justify-content: space-between;
+	/* padding: 15px 0 0 15px; */
+	height: 648px;
+}
+
+/* .side-drawer::-webkit-scrollbar {
+	display: none;
+} */
+
+.display-image {
+	height: 250px;
+	width: 100%;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	object-fit: cover;
+
+}
+
+.img {
+	height: 250px;
+	max-width: 500px;
+	min-width: 300px;
+
+}
+
+.side-drawer-head {
+	padding: 10px;
+}
+
+.side-drawer-head .price {
+	color: #000;
+	font-size: 22px;
+	font-family: Poppins;
+	font-weight: 600;
+	line-height: 150%;
+	padding: 0 10px;
+}
+
+.side-drawer-head .info {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 10px;
+}
+
+.info .info-title {
+	color: #1B1B1B;
+	font-size: 22px;
+	font-family: Poppins;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+.info .info-contact {
+	color: #7E7E7E;
+	font-size: 14px;
+	font-family: Poppins;
+	font-weight: 500;
+	line-height: 185%;
+}
+
+.info-color-box {
+	display: flex;
+	gap: 8px;
+}
+
+.info-color-label {
+	color: #000;
+	font-size: 14px;
+	font-family: Poppins;
+	font-weight: 500;
+	line-height: 185%;
+}
+
+.info-color {
+	width: 41px;
+	height: 22px;
+}
+
+.description {
+	color: #7E7E7E;
+	font-size: 12px;
+	font-family: Poppins;
+	line-height: 150%;
+	padding: 0 10px;
+}
+
+.specifications {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.col-row {
+	margin-bottom: 4px;
+}
+
+.col-label {
+	color: #000;
+	font-size: 14px;
+	font-family: Poppins;
+	font-weight: 500;
+	line-height: 185%;
+}
+
+.col-value {
+	color: #7E7E7E;
+	font-size: 12px;
+	font-family: Poppins;
+	line-height: 150%;
+}
+
+.sidebar-button-layout {
+	display: flex;
+	justify-content: space-evenly;
+	/* padding-top: 8px; */
+	/* margin-left: 7.5%; */
+	gap: 20px;
+}
+
+#buy-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 62px;
+	color: #222;
+	background-color: #FFF;
+	text-align: center;
+	font-size: 16px;
+	font-family: Poppins;
+	font-weight: 600;
+	line-height: 150%;
+	padding: 0 12px;
+}
+#contact-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 62px;
+	background-color: #222;
+	color: #FFF;
+	text-align: center;
+	font-size: 16px;
+	font-family: Poppins;
+	font-weight: 600;
+	line-height: 150%;
+	padding: 0 12px;
+}
+
+
+.divider {
+	height: 0.1px;
+	width: 80%;
+	margin: 0.5% 10%;
+	background-color: #2222225b;
+
+}

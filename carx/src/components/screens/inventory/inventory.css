@@ -1,0 +1,29 @@
+.inventory-layout {
+    display: flex;
+    width: 70vw;
+    padding: 50px;
+    flex-wrap: wrap;
+}
+
+.inventory-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inventory-header .add-listing-btn {
+    background-color: #222;
+    height: 35px;
+}
+
+.addBtn {
+    background-color: #222;
+}
+
+.addBtn:hover {
+    background-color: #000000be;
+}
+
+.clearBtn {
+    color: #000;
+}

@@ -1,0 +1,153 @@
+.checkout-layout { display: flex;}
+.checkout-left {
+    display: inline-flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    justify-content: center;
+    align-items: center;
+    gap: 36px;
+    margin: 32px ;
+    padding: 32px;
+}
+
+.checkout-right{
+    margin: 32px;
+    display: inline-flex;
+    padding: 32px 33px 35px 33px;
+    flex-direction: column;
+    gap: 36px;
+    background: #FFFFFF;
+}
+
+.checkout-form {
+    display: flex;
+    justify-content: flex-start;
+    gap: 0px;
+    margin-top: 0px;
+}
+
+.checkout-left .checkout-left-header,
+.checkout-right .checkout-right-header {
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.checkout-right .form-heading {
+    color: #767676;
+overflow: hidden;
+text-overflow: ellipsis;
+font-size: 22px;
+font-family: Poppins;
+font-weight: 600;
+line-height: 150%;
+margin-bottom: 25px;
+}
+
+label {
+    overflow: hidden;
+color: #767676;
+text-overflow: ellipsis;
+font-size: 14px;
+font-family: Poppins;
+font-weight: 600;
+margin-bottom: 8px;
+}
+
+input {
+    display: flex;
+    width: 250px;
+    height: 20px;
+padding: 8px 12px;
+align-items: center;
+gap: 8px;
+border: 1.5px solid #B0B0B0;
+margin-bottom: 20px;
+}
+
+#proceed-to-pay-btn {
+    	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	background-color: #222;
+	color: #FFF;
+	text-align: center;
+	font-size: 18px;
+	font-family: Poppins;
+	font-weight: 600;
+	line-height: 150%;
+	padding: 0 12px;
+}
+
+.success-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    background-color: #FFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 24;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#success-modal-head {
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    text-align: center;
+    font-size: 28px;
+    font-family: Poppins;
+    font-weight: 600;
+    line-height: 150%;
+    
+}
+#success-gif {
+    height: 164px;
+    flex-shrink: 0;
+    /* background-repeat: no-repeat;
+    background-size: cover; */
+    
+}
+
+#success-modal-desc {
+    color: #000;
+text-align: center;
+font-size: 22px;
+font-family: Poppins;
+font-weight: 500;
+line-height: 150%;
+margin: 25px 0;
+}
+
+#view-order-btn {
+        	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+	height: 50px;
+	background-color: #222;
+	color: #FFF;
+	text-align: center;
+	font-size: 14px;
+	font-family: Poppins;
+	font-weight: 600;
+	line-height: 150%;
+}
+
+#close-modal {
+    margin-left: auto;
+}
+#close-modal:hover{
+    cursor: pointer;
+}
+

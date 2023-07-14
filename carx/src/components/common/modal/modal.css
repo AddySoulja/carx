@@ -1,0 +1,18 @@
+
+.addBtn {
+    background-color: #222;
+}
+
+.addBtn:hover {
+    background-color: #000000be;
+}
+
+.clearBtn {
+    background-color: #FFF;
+}
+
+.clearBtn:hover {
+    background-color: #201e1edd;
+    border: none;
+    color: #FFF;    
+}
