@@ -35,7 +35,7 @@ export const SideDrawer = ({ inDrawer, checkout }) => {
               {inDrawer.make} {inDrawer.model} {inDrawer.year}
             </Typography>
             <Typography className="info-contact">
-              Seller- {inDrawer.contact}
+              Seller- {inDrawer.id}
             </Typography>
           </Box>
           <Box

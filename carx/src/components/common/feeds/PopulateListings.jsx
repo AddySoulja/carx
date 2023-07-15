@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { publicListings as data } from "../../../temp/publicListings";
 import { Box, Typography, Drawer, IconButton, Divider } from "@mui/material";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import DisplayCard from "../card/DisplayCard";
@@ -8,11 +7,11 @@ import { SideDrawer } from "../sidedrawer/SideDrawer";
 import { DrawerHeader, Main } from "./styled_components";
 import { sortFormat } from "../../../temp/templates";
 import { sortList } from "../sort/sort_util";
-import "./populate.css";
 import { useSelector } from "react-redux";
+import "./populate.css";
 const drawerwidth = 500;
 
-const PopulateListings = () => {
+const PopulateListings = ({ keywords }) => {
   const { publicListings } = useSelector((state) => state.publicListings);
   const [publicPosts, setPublicPosts] = useState(publicListings);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -27,6 +26,16 @@ const PopulateListings = () => {
   const handleDrawerClose = () => {
     setDrawerOpen(false);
   };
+  const setPostsByKeywords = () => {
+    const newList = publicListings.filter(
+      (post) =>
+        post &&
+        (post.make.toLowerCase().includes(keywords) ||
+          post.model.toLowerCase().includes(keywords) ||
+          post.model.toLowerCase().includes(keywords))
+    );
+    setPublicPosts(newList);
+  };
 
   useEffect(() => {
     Object.keys(sort).map(
@@ -39,6 +48,10 @@ const PopulateListings = () => {
   useEffect(() => {
     setPublicPosts(publicListings);
   }, [publicListings]);
+
+  useEffect(() => {
+    setPostsByKeywords();
+  }, [keywords]);
   return (
     <>
       <Box className="header">

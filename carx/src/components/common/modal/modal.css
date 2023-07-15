@@ -1,17 +1,54 @@
-
-.addBtn {
-    background-color: #222;
+.box-style {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
 }
 
-.addBtn:hover {
-    background-color: #000000be;
+.modal-container {
+    display: flex;
+    justify-content: center;
 }
-
-.clearBtn {
+.modal {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #000;
     background-color: #FFF;
 }
 
-.clearBtn:hover {
+.modal .modal-close-btn {
+    margin-left: auto;
+    bottom: 50px;
+    right: -10px;
+    padding: 2;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.box-style .addBtn {
+    background-color: #222;
+    margin-left: auto;
+    height: 40px;
+    background-color: #222;
+}
+
+.box-style .addBtn:hover {
+    background-color: #665858;
+}
+
+.box-style .clearBtn {
+    height: 35px;
+    color: #000;
+    border-color: #000;
+    background-color: #FFF;
+}
+
+.box-style .clearBtn:hover {
     background-color: #201e1edd;
     border: none;
     color: #FFF;    

@@ -13,22 +13,15 @@ import {
   Typography,
 } from "@mui/material";
 import { useDispatch } from "react-redux";
-import CloseIcon from "@mui/icons-material/Close";
 import { toast } from "react-toastify";
 import { useCookies } from "react-cookie";
 import { makes } from "../../../temp/makes";
 import { fetchOemData } from "../../screens/user/controllers/fetchCarsOem";
 import { inventoryFormat } from "../../../temp/templates";
 import { setCredentials } from "../../../redux/slices/authSlice";
-import "./modal.css";
 import { setPublicListings } from "../../../redux/slices/publicListingsSlice";
-
-const boxStyle = {
-  display: "flex",
-  gap: "14px",
-  flexWrap: "wrap",
-  marginBottom: "14px",
-};
+import CloseIcon from "@mui/icons-material/Close";
+import "./modal.css";
 
 const ModalForm = ({ open, setOpen, postListing }) => {
   const [cookie, setCookie] = useCookies(["jwt"]);
@@ -38,6 +31,7 @@ const ModalForm = ({ open, setOpen, postListing }) => {
   const [images, setImages] = useState([]);
   const { model, make } = form;
   const dispatch = useDispatch();
+
   const allYears = useCallback(async () => {
     const res = await fetchOemData({
       make: make,
@@ -84,16 +78,16 @@ const ModalForm = ({ open, setOpen, postListing }) => {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    for (const key in form) {
-      if (key !== "images" && key !== "id") {
-        formData.append(key, form[key]);
-      }
-    }
-    for (const image of images) {
-      formData.append("images", image);
-    }
     try {
+      const formData = new FormData();
+      for (const key in form) {
+        if (key !== "images") {
+          formData.append(key, form[key]);
+        }
+      }
+      for (const image of images) {
+        formData.append("images", image);
+      }
       const res = await postListing({ formData, cookie }).unwrap();
       const user = res.user;
       setCookie("jwt", user.token);
@@ -109,19 +103,11 @@ const ModalForm = ({ open, setOpen, postListing }) => {
 
   return (
     <>
-      <Modal
-        open={open}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
+      <Modal open={open} className="modal-container">
         <Box
+          className="modal"
           sx={{
-            display: "flex",
-            flexDirection: "column",
             bgcolor: "background.paper",
-            border: "2px solid #000",
             boxShadow: 24,
             p: 4,
             m: 4,
@@ -131,28 +117,15 @@ const ModalForm = ({ open, setOpen, postListing }) => {
             Add a listing
           </Typography>
           <IconButton
-            sx={{
-              marginLeft: "auto",
-              bottom: 50,
-              right: -10,
-              padding: 0,
-            }}
+            className="modal-close-btn"
             onClick={() => setOpen(false)}
           >
             <CloseIcon />
           </IconButton>
 
-          <Container
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              paddingTop: "10px",
-              overflowX: "hidden",
-              overflowY: "auto",
-            }}
-          >
+          <Container className="form-container">
             <form onSubmit={handleFormSubmit} encType="multipart/form-data">
-              <Box sx={boxStyle}>
+              <Box className="box-style">
                 <FormControl sx={{ width: "223px" }} required>
                   <InputLabel id="input-make-label">Make</InputLabel>
                   <Select
@@ -226,7 +199,7 @@ const ModalForm = ({ open, setOpen, postListing }) => {
                   </Select>
                 </FormControl>
               </Box>
-              <Box sx={boxStyle}>
+              <Box className="box-style">
                 <TextField
                   label="Contact"
                   type="number"
@@ -256,7 +229,7 @@ const ModalForm = ({ open, setOpen, postListing }) => {
                   name="mileage"
                 />
               </Box>
-              <Box sx={boxStyle}>
+              <Box className="box-style">
                 <TextField
                   id="numInput"
                   label="Power"
@@ -284,7 +257,7 @@ const ModalForm = ({ open, setOpen, postListing }) => {
                   id="numInput"
                 />
               </Box>
-              <Box sx={boxStyle}>
+              <Box className="box-style">
                 <TextField
                   label="Title"
                   type="text"
@@ -308,7 +281,7 @@ const ModalForm = ({ open, setOpen, postListing }) => {
                   name="damages"
                 />
               </Box>
-              <Box sx={boxStyle}>
+              <Box className="box-style">
                 <TextField
                   label="Number of accidents"
                   type="number"
@@ -333,7 +306,10 @@ const ModalForm = ({ open, setOpen, postListing }) => {
                   name="registration"
                 />
               </Box>
-              <Box sx={{ ...boxStyle, justifyContent: "space-between" }}>
+              <Box
+                className="box-style"
+                sx={{ justifyContent: "space-between" }}
+              >
                 <TextField
                   label="tags"
                   type="text"
@@ -357,22 +333,15 @@ const ModalForm = ({ open, setOpen, postListing }) => {
                   onChange={handleFiles}
                 />
               </Box>
-              <Box sx={{ ...boxStyle, height: "50px", alignItems: "center" }}>
+              <Box
+                className="box-style"
+                sx={{ height: "50px", alignItems: "center" }}
+              >
                 {images.length > 0 && (
                   <>
                     <h4>Selected Car Images</h4>
                     <Button
                       className="clearBtn"
-                      sx={{
-                        height: "35px",
-                        color: "black",
-                        borderColor: "black",
-                        ":hover": {
-                          backgroundColor: "#222",
-                          color: "#FFF",
-                          border: "none",
-                        },
-                      }}
                       variant="outlined"
                       type="button"
                       onClick={() => setImages([])}
@@ -381,19 +350,7 @@ const ModalForm = ({ open, setOpen, postListing }) => {
                     </Button>
                   </>
                 )}
-                <Button
-                  className="addBtn"
-                  variant="contained"
-                  type="submit"
-                  sx={{
-                    marginLeft: "auto",
-                    height: "40px",
-                    backgroundColor: "#222",
-                    ":hover": {
-                      backgroundColor: "#404040",
-                    },
-                  }}
-                >
+                <Button className="addBtn" variant="contained" type="submit">
                   Add to inventory
                 </Button>
               </Box>

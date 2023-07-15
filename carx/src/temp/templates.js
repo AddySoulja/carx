@@ -29,6 +29,7 @@ const inventoryFormat = {
   model: "",
   year: "",
   contact: "",
+  seller: "",
   price: "",
   mileage: "",
   power: "",

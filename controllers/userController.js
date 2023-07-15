@@ -56,7 +56,6 @@ const authUser = asyncHandler(async (req, res) => {
   if (user && (await user.matchPassword(password))) {
     const { list } = await Listing.findById(user.email);
     let publicListings = await Listing.find({});
-
     publicListings = publicListings.map((item) => item.list).flat();
     res.status(200).json({
       user: {
@@ -64,7 +63,7 @@ const authUser = asyncHandler(async (req, res) => {
         username: user.username,
         email: user.email,
         photo: user.photo,
-        posts: [...list],
+        posts: list,
         favorites: user.favorites,
         token: generateToken(user._id),
       },

@@ -139,7 +139,7 @@ const DisplayCard = ({ vehicleData, onClick }) => {
           {vehicleData.make} {vehicleData.model} {vehicleData.year}
         </div>
         <div className="car-seller">
-          {`Seller: ${vehicleData.contact}`}
+          {`Seller: ${vehicleData.id}`}
 
           <FavoriteIcon
             onClick={handleFavorites}

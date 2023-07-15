@@ -10,6 +10,7 @@ const listingSchema = mongoose.Schema(
         model: { type: String },
         year: { type: Number },
         contact: { type: Number },
+        tags: { type: String },
         price: { type: Number },
         mileage: { type: Number },
         power: { type: Number },

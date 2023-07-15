@@ -18,7 +18,7 @@ import { useSelector } from "react-redux";
 import logo from "../../../assets/logo.png";
 import "./navbar.css";
 
-function Navbar() {
+function Navbar({ keywords, setKeywords }) {
   const { userInfo } = useSelector((state) => state.auth);
   const [anchorElUser, setAnchorElUser] = useState(null);
   const navigate = useNavigate();
@@ -50,20 +50,24 @@ function Navbar() {
           </Tooltip>
 
           <Box className="center-bar">
-            <Box
-              className="searchbar"
-              sx={{
-                display: { xs: "none", sm: "flex", md: "flex", lg: "flex" },
-                marginLeft: "auto",
-                marginRight: "auto",
-              }}
-            >
-              <InputBase
-                className="searchbar-input"
-                placeholder="Find cars, models, etc."
-              />
-              <SearchIcon className="searchbar-icon" />
-            </Box>
+            {setKeywords && (
+              <Box
+                className="searchbar"
+                sx={{
+                  display: { xs: "none", sm: "flex", md: "flex", lg: "flex" },
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+              >
+                <InputBase
+                  value={keywords}
+                  onChange={(e) => setKeywords(e.target.value)}
+                  className="searchbar-input"
+                  placeholder="Find cars, models, etc."
+                />
+                <SearchIcon className="searchbar-icon" />
+              </Box>
+            )}
 
             <Box
               sx={{
@@ -71,7 +75,8 @@ function Navbar() {
                 alignItems: "center",
                 justifyContent: "space-evenly",
                 gap: 2,
-                marginRight: "auto",
+                marginRight: "50px",
+                marginLeft: "auto",
               }}
             >
               <Tooltip title="Buy Cars" to="/">
